@@ -19,5 +19,8 @@ use Illuminate\Http\Request;
 
 Route::apiResource('users','UserController');
 Route::apiResource('providers','ProviderController');
-Route::apiResource('products','ProductController');
+Route::get('products','ProductController@getAll')->name('getAllProduct');
+Route::post('products','ProductController@add')->name('addProduct');
+Route::get('products/{id}','ProductController@get')->name('getProduct');
 Route::apiResource('orders','OrderController');
+
