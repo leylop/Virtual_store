@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
    
-    public function getAll(){
+   public function getAll(){
         $product=Product::all();
         return $product;
     }
@@ -21,6 +21,6 @@ class ProductController extends Controller
     public function get($id){
         $product=Product::find($id);
         return $product;
-    }
+    } 
 
 }
