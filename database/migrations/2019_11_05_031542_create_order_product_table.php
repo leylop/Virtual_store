@@ -15,12 +15,13 @@ class CreateOrderProductTable extends Migration
     {
         Schema::defaultStringLength(191);
         Schema::create('order_product', function (Blueprint $table) {
-          //  $table->bigIncrements('id');
+           $table->bigIncrements('id');
            // $table->timestamps();
            $table->unsignedBigInteger('id_order');
            $table->foreign('id_order')->references('id')->on('orders');
            $table->unsignedBigInteger('id_product');
            $table->foreign('id_product')->references('id')->on('products');
+           $table->integer('quantity');
         });
     }
 
